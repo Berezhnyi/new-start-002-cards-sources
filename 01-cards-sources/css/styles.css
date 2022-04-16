@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  overflow: hidden;
+  margin: 0;
+  background: #333;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  padding: 0 20px;
+}
+
+.slide {
+  height: 80vh;
+  border-radius: 20px;
+  cursor: pointer;
+  flex: 1;
+  color: #ccc;
+  background-size: cover;
+  /* масштабирует с сохранинием пропорций */
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  /* задает позиционирование относительно себя для дочерних элементов */
+  transition: all .5s ease-in-out;
+}
+
+.slide+.slide {
+  margin-left: 20px;
+}
+
+.slide h3 {
+  position: absolute;
+  font-size: 24px;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+  /* Элемент полностью прозрачен (он становится невидимым). */
+}
+
+.slide.active {
+  flex: 8;
+}
+
+.slide.active h3 {
+  opacity: 1;
+  transition: opacity .5s ease-in .6s;
+}
